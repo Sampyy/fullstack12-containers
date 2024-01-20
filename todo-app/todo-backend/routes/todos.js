@@ -6,6 +6,7 @@ const { getAsync, setAsync } = require("../redis/index")
 /* GET todos listing. */
 router.get("/", async (_, res) => {
   const todos = await Todo.find({})
+  console.log("checking if its")
   res.send(todos)
 })
 
@@ -17,7 +18,7 @@ router.post("/", async (req, res) => {
   })
   const currCounter = await getAsync("added_todos")
   console.log(currCounter)
-  await setAsync("added_todos", Number(currCounter)+1 || 1)
+  await setAsync("added_todos", Number(currCounter) + 1 || 1)
   res.send(todo)
 })
 

@@ -10,4 +10,4 @@ RUN npm run build
 
 FROM nginx:1.20-alpine
 
-COPY --from=build-stage /usr/src/app/build /usr/share/ngingx/html
+COPY --from=build-stage /usr/src/app/build /usr/share/nginx/html
