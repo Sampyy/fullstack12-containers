@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build:
+      context: BooksFront
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./BooksFront:/usr/src/app
+    ports:
+      - 3000:3000
+    container_name: books-frontend-dev
+  backend:
+    build:
+      context: BooksBackend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./BooksBackend:/usr/src/app
+    ports:
+      - 4000:4000
+    container_name: books-backend-dev
