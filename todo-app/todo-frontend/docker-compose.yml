@@ -1,13 +1,14 @@
 services:
    app:
-      image: todo-front-dev
+      image: todo-front
       build:
         context: .
-        dockerfile: dev.Dockerfile
+        dockerfile: Dockerfile
       volumes:
         - ./:/usr/src/app
       ports:
         - 3000:3000
-      container_name: todo-front-dev
+        - 3001:80
+      container_name: todo-front
         #env variable
         
